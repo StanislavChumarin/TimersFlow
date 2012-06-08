@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">TimersFlowApp</string>
+    <string name="dialog_set_number">Set</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_picker_title">Choose a number</string>
+    <string name="app_name">TrainerTimers</string>
 </resources>
