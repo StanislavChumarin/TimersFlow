@@ -3,5 +3,12 @@
     <string name="dialog_set_number">Set</string>
     <string name="dialog_cancel">Cancel</string>
     <string name="dialog_picker_title">Choose a number</string>
-    <string name="app_name">TrainerTimers</string>
+    <string name="app_name">TimersFlow</string>
+
+    <string name="add_row">Add</string>
+    <string name="hours">Hours</string>
+    <string name="minutes">Minutes</string>
+    <string name="seconds">Seconds</string>
+    <string name="set_up_timer">Set timer</string>
+    <string name="cancel">Cancel</string>
 </resources>

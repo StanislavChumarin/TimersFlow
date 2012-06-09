@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center_vertical">
+    <RelativeLayout
+            android:id="@+id/numbers_part"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal">
+        <Spinner
+                android:id="@+id/hours_spinner"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:entries="@array/hours_values"
+                android:prompt="@string/hours"/>
+        <Spinner
+                android:id="@+id/minutes_spinner"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_toRightOf="@+id/hours_spinner"
+                android:entries="@array/minutes_values"
+                android:prompt="@string/minutes"/>
+        <Spinner
+                android:id="@+id/seconds_spinner"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_toRightOf="@+id/minutes_spinner"
+                android:entries="@array/seconds_values"
+                android:prompt="@string/seconds"/>
+    </RelativeLayout>
+    <RelativeLayout
+            android:id="@+id/buttons_part"
+            android:layout_below="@+id/numbers_part"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal"
+            android:layout_margin="30dp">
+        <Button
+                android:id="@+id/set_up_timer_button"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="@string/set_up_timer"/>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dialog_set_number">Установить</string>
+    <string name="dialog_cancel">Отмена</string>
+    <string name="dialog_picker_title">Выбери номер</string>
+
+    <string name="add_row">Добавить</string>
+    <string name="hours">Часы</string>
+    <string name="minutes">Минуты</string>
+    <string name="seconds">Секунды</string>
+    <string name="set_up_timer">Установить</string>
+    <string name="cancel">Отмена</string>
+</resources>
