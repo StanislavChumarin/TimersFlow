@@ -1,32 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/stl"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:gravity="center_vertical">
     <RelativeLayout
+            android:id="@+id/name_wrap"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal"
+            android:layout_margin="30dp">
+        <EditText
+                android:id="@+id/timer_name"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:editable="true"
+                android:hint="@string/timer_name_hint"/>
+    </RelativeLayout>
+    <RelativeLayout
             android:id="@+id/numbers_part"
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
+            android:layout_below="@+id/name_wrap"
             android:gravity="center_horizontal">
         <Spinner
-                android:id="@+id/hours_spinner"
+                android:id="@+id/hours_spin"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:entries="@array/hours_values"
                 android:prompt="@string/hours"/>
         <Spinner
-                android:id="@+id/minutes_spinner"
+                android:id="@+id/minutes_spin"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:layout_toRightOf="@+id/hours_spinner"
+                android:layout_toRightOf="@+id/hours_spin"
                 android:entries="@array/minutes_values"
                 android:prompt="@string/minutes"/>
         <Spinner
-                android:id="@+id/seconds_spinner"
+                android:id="@+id/seconds_spin"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:layout_toRightOf="@+id/minutes_spinner"
+                android:layout_toRightOf="@+id/minutes_spin"
                 android:entries="@array/seconds_values"
                 android:prompt="@string/seconds"/>
     </RelativeLayout>
@@ -41,6 +56,7 @@
                 android:id="@+id/set_up_timer_button"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:text="@string/set_up_timer"/>
+                android:text="@string/set_up_timer"
+                android:onClick="setupTimer"/>
     </RelativeLayout>
 </RelativeLayout>

@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="dialog_set_number">Set</string>
-    <string name="dialog_cancel">Cancel</string>
-    <string name="dialog_picker_title">Choose a number</string>
     <string name="app_name">TimersFlow</string>
 
     <string name="add_row">Add</string>
+    <string name="timer_name_hint">Activity name</string>
     <string name="hours">Hours</string>
     <string name="minutes">Minutes</string>
     <string name="seconds">Seconds</string>
     <string name="set_up_timer">Set timer</string>
     <string name="cancel">Cancel</string>
+
+    <string name="hours_short">h</string>
+    <string name="minutes_short">m</string>
+    <string name="seconds_short">s</string>
 </resources>
