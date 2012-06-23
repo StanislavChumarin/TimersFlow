@@ -1,6 +1,7 @@
 package ua.com.leastas;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -55,5 +56,9 @@ public class SetupTimerActivity extends Activity {
         t.minutes = selected_hms[1];
         t.seconds = selected_hms[2];
         t.name = ((TextView) findViewById(R.id.timer_name)).getText().toString();
+        //this should be not next, but previous intent. Or implement custom behaviour on back button
+        Intent intent = new Intent(this, TimersListActivity.class);
+        intent.putExtra(IntervalTimer.PARCELABLE, t);
+        startActivity(intent);
     }
 }

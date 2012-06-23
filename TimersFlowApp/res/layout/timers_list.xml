@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:orientation="vertical"
-             android:layout_width="fill_parent"
-             android:layout_height="fill_parent"
-             android:background="@android:color/darker_gray">
-    <TableRow
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@android:color/darker_gray">
+    <ListView
+            android:id="@android:id/list"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent">
+
+    </ListView>
+    <!--<TableRow
             android:id="@+id/add_row"
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
@@ -25,7 +31,7 @@
                 android:textSize="30dp"
                 android:layout_margin="5dp"
                 android:text="@string/add_row"/>
-    </TableRow>
+    </TableRow>-->
 
-</TableLayout>
+</RelativeLayout>
 

@@ -1,33 +1,71 @@
 package ua.com.leastas;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import com.actionbarsherlock.app.SherlockListActivity;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuInflater;
+import com.actionbarsherlock.view.MenuItem;
+import ua.com.leastas.objects.IntervalTimer;
 
-public class TimersListActivity extends Activity {
+import java.util.Iterator;
+import java.util.LinkedList;
+
+public class TimersListActivity extends SherlockListActivity {
+
+    LinkedList<IntervalTimer> timersList = new LinkedList<IntervalTimer>();
+
     /**
      * Called when the activity is first created.
      */
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.timers_list);
 
-//        findViewById(R.id.add_row).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(TimersListActivity.this, SetupTimerActivity.class));
-//            }
-//        });
+//        ActionBar actionBar = getSupportActionBar();
+//        actionBar.setHomeButtonEnabled(true);
+
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            addOrUpdateTimer((IntervalTimer) bundle.getParcelable(IntervalTimer.PARCELABLE));
+        }
     }
 
-    public void addRow(View v) {
-        Intent setupTimerIntent = new Intent(v.getContext(), SetupTimerActivity.class);
+
+    private void addOrUpdateTimer(IntervalTimer intervalTimer) {
+        Iterator<IntervalTimer> iterator = timersList.iterator();
+        boolean listUpdated = false;
+        while (iterator.hasNext()) {
+            IntervalTimer it = iterator.next();
+            if (it.equals(intervalTimer)) {
+                it.updateWithData(intervalTimer);
+                listUpdated = true;
+            }
+        }
+        if (listUpdated) timersList.add(intervalTimer);
+    }
+
+    public void addRow() {
+        Intent setupTimerIntent = new Intent(getApplicationContext(), SetupTimerActivity.class);
         startActivity(setupTimerIntent);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.addRow:
+                addRow();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getSupportMenuInflater();
+        menuInflater.inflate(R.menu.main_menu, menu);
+        return true;
+    }
 }
